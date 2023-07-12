@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import Sidebar from "../components/Sidebar";
 import dashboardpic from "../images/todo.webp";
+import TodoList from "../components/TodoList";
 
 const Dashboard = () => {
   useEffect(() => {
@@ -39,6 +40,7 @@ const Dashboard = () => {
         </div>
         <div className="row">
           <h1 className="text-center mb-3">Your Topics</h1>
+          <TodoList/>
         </div>
       </div>
     </section>

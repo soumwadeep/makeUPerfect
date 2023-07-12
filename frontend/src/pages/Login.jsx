@@ -19,7 +19,7 @@ const Login = () => {
     const data = { email, password };
     const response = await login(data);
     if (response.status === 200) {
-      alert("Welcome To makeUPerfect.Let's Continue Our Journey!");
+      alert("Welcome To makeUPerfect. Let's Continue Our Journey!");
       setUser(response.data.user);
       navigate("/user/dashboard");
     } else {
