@@ -30,7 +30,12 @@ const TodoItems = ({ item }) => {
         </button>
       </td>
       <td>
-        <button className="btn btn-warning">Update</button>
+        <button
+          className="btn btn-warning"
+          onClick={() => navigate(`/todo/update/${item._id}`)}
+        >
+          Update
+        </button>
       </td>
       <td>
         <button className="btn btn-danger" onClick={deleteHandler}>

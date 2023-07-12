@@ -44,7 +44,9 @@ table,
 tr,
 td,
 th,
-tbody {
+tbody,
+select,
+option {
   background-color: transparent !important;
 }
 

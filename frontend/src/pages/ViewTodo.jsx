@@ -5,6 +5,9 @@ import Sidebar from "../components/Sidebar";
 import dashboardpic from "../images/todo.webp";
 
 const ViewTodo = () => {
+  useEffect(() => {
+    document.title = "View Todo | makeUPerfect";
+  }, []);
   const [todo, setTodo] = useState({});
   const { id } = useParams();
   useEffect(() => {
