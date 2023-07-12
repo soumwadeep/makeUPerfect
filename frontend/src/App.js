@@ -21,6 +21,7 @@ const App = () => {
           <Route exact path="/user/register" element={<Register />}></Route>
           <Route exact path="/user/login" element={<Login />}></Route>
           <Route exact path="/user/profile" element={<Profile />}></Route>
+          <Route exact path="/todo/create" element={<Profile />}></Route>
           <Route exact path="/" element={<Navigate to="/home" replace />} />
           <Route path="*" element={ErrorPage} />
         </Routes>

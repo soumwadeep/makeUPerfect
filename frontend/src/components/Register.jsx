@@ -7,13 +7,12 @@ const Register = () => {
   useEffect(() => {
     document.title = "Register | makeUPerfect";
   }, []);
-  const [user, setUser] = useState({
-    name: "",
-    phone: "",
-    email: "",
-    password: "",
-  });
   const navigate = useNavigate();
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [age, setAge] = useState("");
+  const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
   return (
     <section>
       <div className="row">
@@ -32,47 +31,38 @@ const Register = () => {
               <div className="inner">
                 <h1>Register</h1>
                 <br />
-                <form method="post">
+                <form>
                   <div className="mb-3">
                     <label className="form-label">Name</label>
                     <input
                       type="text"
+                      placeholder="Enter your name here..."
                       className="form-control"
                       required
-                      onChange={(e) => {
-                        setUser({
-                          ...user,
-                          name: e.target.value,
-                        });
-                      }}
-                    />
-                  </div>
-                  <div className="mb-3">
-                    <label className="form-label">Phone</label>
-                    <input
-                      type="number"
-                      className="form-control"
-                      required
-                      onChange={(e) => {
-                        setUser({
-                          ...user,
-                          phone: e.target.value,
-                        });
-                      }}
+                      value={name}
+                      onChange={(e) => setName(e.target.value)}
                     />
                   </div>
                   <div className="mb-3">
                     <label className="form-label">Email</label>
                     <input
                       type="email"
+                      placeholder="Enter your Email ID here..."
                       className="form-control"
                       required
-                      onChange={(e) => {
-                        setUser({
-                          ...user,
-                          email: e.target.value,
-                        });
-                      }}
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
+                    />
+                  </div>
+                  <div className="mb-3">
+                    <label className="form-label">Age</label>
+                    <input
+                      type="number"
+                      placeholder="Enter your age here..."
+                      className="form-control"
+                      required
+                      value={age}
+                      onChange={(e) => setAge(e.target.value)}
                     />
                   </div>
                   <div className="mb-3">
@@ -80,13 +70,21 @@ const Register = () => {
                     <input
                       type="password"
                       className="form-control"
+                      placeholder="Password must be of 6 characters and above..."
                       required
-                      onChange={(e) => {
-                        setUser({
-                          ...user,
-                          password: e.target.value,
-                        });
-                      }}
+                      value={password}
+                      onChange={(e) => setPassword(e.target.value)}
+                    />
+                  </div>
+                  <div className="mb-3">
+                    <label className="form-label">Confirm Password</label>
+                    <input
+                      type="password"
+                      className="form-control"
+                      placeholder="Password must be of 6 characters and above..."
+                      required
+                      value={confirmPassword}
+                      onChange={(e) => setConfirmPassword(e.target.value)}
                     />
                   </div>
                   <button
@@ -99,7 +97,7 @@ const Register = () => {
                   <p className="mt-3">
                     Already Registered?
                     <NavLink
-                      to="/SignIn"
+                      to="/user/login"
                       style={{ color: "orangered", fontWeight: "900px" }}
                     >
                       {" "}

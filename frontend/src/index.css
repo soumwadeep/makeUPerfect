@@ -32,6 +32,14 @@ textarea {
   background: transparent !important;
 }
 
+label {
+  font-weight: bold !important;
+}
+
+button {
+  font-weight: bold !important;
+}
+
 .logo {
   width: 32px;
   border-radius: 0;

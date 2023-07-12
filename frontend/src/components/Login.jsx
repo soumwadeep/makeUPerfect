@@ -6,6 +6,8 @@ const Login = () => {
   useEffect(() => {
     document.title = "Login | makeUPerfect";
   }, []);
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   return (
     <section>
       <div className="row">
@@ -16,17 +18,27 @@ const Login = () => {
                 <div className="inner">
                   <h1>Login</h1>
                   <br />
-                  <form method="post">
+                  <form>
                     <div className="mb-3">
                       <label className="form-label">Email</label>
-                      <input type="email" className="form-control" required />
+                      <input
+                        type="email"
+                        placeholder="Enter your Email ID here..."
+                        className="form-control"
+                        required
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
+                      />
                     </div>
                     <div className="mb-3">
                       <label className="form-label">Password</label>
                       <input
                         type="password"
                         className="form-control"
+                        placeholder="Password must be of 6 characters and above..."
                         required
+                        value={password}
+                        onChange={(e) => setPassword(e.target.value)}
                       />
                     </div>
                     <button
@@ -35,7 +47,7 @@ const Login = () => {
                       // disabled={isSigningIn}
                     >
                       {/* {isSigningIn ? "Signing In..." : "Sign In"} */}
-                      Login Now
+                      Login
                     </button>
                     <p className="mt-3">
                       New User?
