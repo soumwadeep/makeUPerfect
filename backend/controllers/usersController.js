@@ -150,10 +150,15 @@ export const updatePassword = async (req, res) => {
 
 export const deleteUser = async (req, res) => {
   try {
-    const user = await User.findByIdAndRemove(req.user);
+    const user = await User.findById(req.user);
     if (!user) {
       return res.status(404).json({ msg: "User Not Found" });
     }
+    const todos = await Todo.find({ user: req.user });
+    if (todos.length > 0) {
+      await Todo.deleteMany({ user: req.user });
+    }
+    await User.deleteOne({ _id: req.user });
     res.clearCookie("token");
     res.status(200).json({ msg: "User Deleted Successfully" });
   } catch (error) {
