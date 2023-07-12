@@ -5,7 +5,7 @@ const Footer = () => {
     <>
       <NavLink to="/" style={{ color: "black" }}>
         <h5 className="text-center mt-2">
-          Copyright makeUPerfect.All Rights Reserved.
+          Copyright <b>makeUPerfect</b>.All Rights Reserved.
         </h5>
       </NavLink>
     </>

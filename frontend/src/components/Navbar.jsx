@@ -15,7 +15,7 @@ const Navbar = () => {
     <>
       <nav className="navbar sticky-top navbar-expand-lg text-center">
         <div className="container-fluid">
-          <NavLink className="navbar-brand" to="/Home">
+          <NavLink className="navbar-brand" to="/home">
             <img src={icon} alt="Logo" className="logo" /> make<b>U</b>Perfect
           </NavLink>
           <button
@@ -53,7 +53,7 @@ const Navbar = () => {
                     className={(navData) =>
                       navData.isActive ? "nav-link-active" : "nav-link"
                     }
-                    to="/Home"
+                    to="/home"
                     onClick={() => {
                       window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
                       toggleNav();
@@ -68,7 +68,7 @@ const Navbar = () => {
                     className={(navData) =>
                       navData.isActive ? "nav-link-active" : "nav-link"
                     }
-                    to="/About"
+                    to="/about"
                     onClick={() => {
                       window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
                       toggleNav();
@@ -82,7 +82,7 @@ const Navbar = () => {
                     className={(navData) =>
                       navData.isActive ? "nav-link-active" : "nav-link"
                     }
-                    to="/Contact"
+                    to="/contact"
                     onClick={() => {
                       window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
                       toggleNav();
@@ -96,7 +96,7 @@ const Navbar = () => {
                     className={(navData) =>
                       navData.isActive ? "nav-link-active" : "nav-link"
                     }
-                    to="/Register"
+                    to="/user/register"
                     onClick={() => {
                       window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
                       toggleNav();
@@ -110,7 +110,7 @@ const Navbar = () => {
                     className={(navData) =>
                       navData.isActive ? "nav-link-active" : "nav-link"
                     }
-                    to="/Login"
+                    to="/user/login"
                     onClick={() => {
                       window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
                       toggleNav();
