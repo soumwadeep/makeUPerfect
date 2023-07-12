@@ -61,6 +61,17 @@ const Profile = () => {
                     <b>Email:</b>
                     {user.email}
                   </h4>
+                  <h4>
+                    <b>Member Since:</b>
+                    {new Date(user.createdAt).toLocaleString("en-US", {
+                      year: "numeric",
+                      month: "long",
+                      day: "numeric",
+                      hour: "numeric",
+                      minute: "numeric",
+                      second: "numeric",
+                    })}
+                  </h4>
                   <br />
                   <button
                     type="submit"
