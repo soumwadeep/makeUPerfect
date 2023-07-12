@@ -21,7 +21,7 @@ const Dashboard = () => {
             <div className="outer">
               <div className="middle">
                 <div className="inner">
-                  <h1>Welcome To Perfector&apos;s Dashboard!</h1>
+                  <h1>Welcome To makeUPerfect&apos;s Dashboard!</h1>
                   <p>Some Instructions:</p>
                   <p>Start Creating Your Favourite Topics Here.</p>
                 </div>

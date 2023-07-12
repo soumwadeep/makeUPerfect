@@ -1,11 +1,25 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable no-unused-vars */
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import logo from "../images/icon.webp";
+import { UserContext } from "../context/UserContext";
+import { logout } from "../apiCalls/user";
 const Sidebar = () => {
-  const [userDetails, setUserDetails] = useState();
   const navigate = useNavigate();
+  const { user, setUser } = useContext(UserContext);
+  const logoutHandler = async (e) => {
+    e.preventDefault();
+    const response = await logout();
+    if (response.status === 200) {
+      alert("You Are Logged Out Successfully!");
+      setUser({});
+      navigate("/user/login");
+    } else {
+      alert(response);
+      return;
+    }
+  };
   return (
     <>
       <button
@@ -59,7 +73,12 @@ const Sidebar = () => {
             Profile
           </NavLink>
           <br />
-          <NavLink className="btn btn-danger text-center">Sign Out</NavLink>
+          <NavLink
+            className="btn btn-danger text-center"
+            onClick={logoutHandler}
+          >
+            Sign Out
+          </NavLink>
         </div>
       </div>
     </>
