@@ -19,17 +19,17 @@ const Home = () => {
                   Your Daily Tasks?
                 </p>
                 <p>
-                  Look No Further! Perfector Is Here To Help You Overcome Your
-                  Weaknesses And Succeed In Your Favorite Subjects. With
-                  Perfector, You Can Create Personalized To-do Lists Focused On
-                  The Areas You Want To Improve. By Breaking Down Your Goals
+                  Look No Further! makeUPerfect Is Here To Help You Overcome
+                  Your Weaknesses And Succeed In Your Favorite Subjects. With
+                  makeUPerfect, You Can Create Personalized To-do Lists Focused
+                  On The Areas You Want To Improve. By Breaking Down Your Goals
                   Into Manageable Daily Tasks, You&apos;ll Be Well On Your Way
                   To Achieving Success!
                 </p>
                 <p>
                   Don&apos;t Let A Lack Of Practice Bring You Down. With
-                  Perfector, You&apos;ll Stay Motivated And Make Progress Every
-                  Day. Start Using Perfector Today And Unlock Your Full
+                  makeUPerfect, You&apos;ll Stay Motivated And Make Progress
+                  Every Day. Start Using makeUPerfect Today And Unlock Your Full
                   Potential!
                 </p>
                 <NavLink to="/SignUp">

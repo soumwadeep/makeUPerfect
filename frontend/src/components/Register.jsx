@@ -1,12 +1,11 @@
-import signuppic from "../images/signup.webp";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { account, databases } from "../AppwriteConfig";
 import { NavLink } from "react-router-dom";
+import signuppic from "../images/signup.webp";
 
-const SignUp = () => {
+const Register = () => {
   useEffect(() => {
-    document.title = "Sign Up | Perfector";
+    document.title = "Register | makeUPerfect";
   }, []);
   const [user, setUser] = useState({
     name: "",
@@ -15,66 +14,6 @@ const SignUp = () => {
     password: "",
   });
   const navigate = useNavigate();
-  //   Register
-  const registerUser = async (e) => {
-    e.preventDefault();
-
-    // Check if all fields are filled
-    for (const key in user) {
-      if (user[key] === "") {
-        alert("Please Fill In All Fields!");
-        return;
-      }
-    }
-
-    const userId = user.phone;
-    try {
-      // eslint-disable-next-line no-unused-vars
-      const response = await account.create(
-        userId,
-        user.email,
-        user.password,
-        user.name
-      );
-      //   console.log(response);
-      alert(
-        "Welcome To Perfector! You Are Now Registered! Please Sign In To Our Platform To Continue..."
-      );
-      navigate("/SignIn");
-
-      const docId = Date.now().toString();
-      const documentData = {
-        name: user.name,
-        phone: user.phone,
-        email: user.email,
-        password: user.password,
-      };
-
-      const promise = databases.createDocument(
-        "64a655223c7d1fc593e5",
-        "64a65532da54fa6f88dd",
-        docId,
-        documentData
-      );
-
-      //   console.log("Data", documentData);
-
-      promise.then(
-        // eslint-disable-next-line no-unused-vars
-        function (response) {
-          // console.log(response);
-          // alert("Registered!"); // Success
-          //   window.location.replace("/SignIn");
-        },
-        function (error) {
-          console.log(error); // Failure
-        }
-      );
-    } catch (error) {
-      console.log(error);
-      alert(error);
-    }
-  };
   return (
     <section>
       <div className="row">
@@ -91,7 +30,7 @@ const SignUp = () => {
           <div className="outer">
             <div className="middle">
               <div className="inner">
-                <h1>Sign Up Now</h1>
+                <h1>Register</h1>
                 <br />
                 <form method="post">
                   <div className="mb-3">
@@ -153,9 +92,9 @@ const SignUp = () => {
                   <button
                     type="submit"
                     className="btn btn-warning"
-                    onClick={registerUser}
+                    // onClick={registerUser}
                   >
-                    Sign Up
+                    Register
                   </button>
                   <p className="mt-3">
                     Already Registered?
@@ -178,4 +117,4 @@ const SignUp = () => {
   );
 };
 
-export default SignUp;
+export default Register;

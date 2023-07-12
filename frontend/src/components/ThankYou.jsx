@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import thankyou from "../images/thankyou.webp";
 const ThankYou = () => {
   useEffect(() => {
-    document.title = "Thank You | Perfector";
+    document.title = "Thank You | makeUPerfect";
   }, []);
   return (
     <>

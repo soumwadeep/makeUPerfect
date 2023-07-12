@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import contactpic from "../images/contact.webp";
 const Contact = () => {
   useEffect(() => {
-    document.title = "Contact Us | Perfector";
+    document.title = "Contact Us | makeUPerfect";
   }, []);
   return (
     <section>
@@ -21,14 +21,14 @@ const Contact = () => {
                     <input
                       type="hidden"
                       name="_subject"
-                      value="An User Has Just Send You A Message From Perfector's Contact Form.Please Have A Look!"
+                      value="An User Has Just Send You A Message From makeUPerfect's Contact Form.Please Have A Look!"
                     />
                     <input type="hidden" name="_template" value="table" />
                     <input type="hidden" name="_captcha" value="false" />
                     <input
                       type="hidden"
                       name="_next"
-                      value="https://perfector.soumwadeepguha.com/ThankYou"
+                      value="https://makeUPerfect.soumwadeepguha.com/ThankYou"
                     />
                   </div>
                   <div className="mb-3">
