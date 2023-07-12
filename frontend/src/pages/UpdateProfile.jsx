@@ -11,6 +11,7 @@ const UpdateProfile = () => {
   }, []);
   const { user, setUser } = useContext(UserContext);
   const [name, setName] = useState(user.name);
+  const [phone, setPhone] = useState(user.phone);
   const [email, setEmail] = useState(user.email);
   const [age, setAge] = useState(user.age);
   const navigate = useNavigate();
@@ -18,6 +19,7 @@ const UpdateProfile = () => {
     e.preventDefault();
     const data = {
       name,
+      phone,
       email,
       age,
     };
@@ -52,6 +54,17 @@ const UpdateProfile = () => {
                         required
                         value={name}
                         onChange={(e) => setName(e.target.value)}
+                      />
+                    </div>
+                    <div className="mb-3">
+                      <label className="form-label">Mobile No.</label>
+                      <input
+                        type="number"
+                        placeholder="Enter your mobile no. here..."
+                        className="form-control"
+                        required
+                        value={phone}
+                        onChange={(e) => setPhone(e.target.value)}
                       />
                     </div>
                     <div className="mb-3">

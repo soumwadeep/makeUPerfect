@@ -11,6 +11,7 @@ const Register = () => {
     document.title = "Register | makeUPerfect";
   }, []);
   const [name, setName] = useState("");
+  const [phone, setPhone] = useState("");
   const [email, setEmail] = useState("");
   const [age, setAge] = useState("");
   const [password, setPassword] = useState("");
@@ -25,6 +26,7 @@ const Register = () => {
     }
     const data = {
       name,
+      phone,
       email,
       age,
       password,
@@ -69,6 +71,17 @@ const Register = () => {
                         required
                         value={name}
                         onChange={(e) => setName(e.target.value)}
+                      />
+                    </div>
+                    <div className="mb-3">
+                      <label className="form-label">Mobile No.</label>
+                      <input
+                        type="number"
+                        placeholder="Enter your mobile no. here..."
+                        className="form-control"
+                        required
+                        value={phone}
+                        onChange={(e) => setPhone(e.target.value)}
                       />
                     </div>
                     <div className="mb-3">

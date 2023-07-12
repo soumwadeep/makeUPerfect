@@ -4,7 +4,7 @@ import bcrypt from "bcrypt";
 import Todo from "../models/Todo.js";
 
 export const register = async (req, res) => {
-  const { name, email, password, age } = req.body;
+  const { name, phone, email, password, age } = req.body;
   console.log(req.body);
   try {
     let user = await User.findOne({ email });
@@ -22,6 +22,7 @@ export const register = async (req, res) => {
 
     user = new User({
       name,
+      phone,
       email,
       password: hashedPassword,
       age,
@@ -98,7 +99,7 @@ export const getMe = async (req, res) => {
 };
 
 export const updateDetails = async (req, res) => {
-  const { name, email, age } = req.body;
+  const { name, phone, email, age } = req.body;
   try {
     let user = await User.findById(req.user);
     if (!user) {
@@ -109,6 +110,7 @@ export const updateDetails = async (req, res) => {
       return res.status(404).json({ msg: "Email Already Exists" });
     }
     user.name = name;
+    user.phone = phone;
     user.email = email;
     user.age = age;
 

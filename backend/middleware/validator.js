@@ -2,6 +2,7 @@ import { check } from "express-validator";
 
 export const registerRules = [
   check("name", "Name Is Required").notEmpty().trim().escape(),
+  check("phone", "Mobile No. Is Required").notEmpty().trim().escape().isNumeric(),
   check("email", "Please Enter Your Email").isEmail().normalizeEmail(),
   check("password", "Password Should Be Of 6 Or More Characters").isLength({
     min: 6,
@@ -18,6 +19,7 @@ export const loginRules = [
 
 export const updateDetailsRules = [
   check("name", "Name Is Required").notEmpty().trim().escape(),
+  check("phone", "Mobile No. Is Required").notEmpty().trim().escape().isNumeric(),
   check("email", "Please Enter Your Email").isEmail().normalizeEmail(),
   check("age", "Age Is Required").notEmpty().trim().escape().isNumeric(),
 ]

@@ -55,11 +55,14 @@ const Profile = () => {
                     <b>Name:</b> {user.name}
                   </h4>
                   <h4>
-                    <b>Age:</b> {user.age}
+                    <b>Mobile No:</b> {user.phone}
                   </h4>
                   <h4>
                     <b>Email:</b>
                     {user.email}
+                  </h4>
+                  <h4>
+                    <b>Age:</b> {user.age}
                   </h4>
                   <h4>
                     <b>Member Since:</b>
