@@ -3,7 +3,7 @@ import { useNavigate, NavLink } from "react-router-dom";
 import { login } from "../apiCalls/user";
 import { UserContext } from "../context/UserContext";
 import signinpic from "../images/login.webp";
-import Navbar from "./Navbar";
+import Navbar from "../components/Navbar";
 
 const Login = () => {
   useEffect(() => {

@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import contactpic from "../images/contact.webp";
-import Navbar from "./Navbar";
+import Navbar from "../components/Navbar";
 const Contact = () => {
   useEffect(() => {
     document.title = "Contact Us | makeUPerfect";
@@ -14,7 +14,7 @@ const Contact = () => {
             <div className="outer">
               <div className="middle">
                 <div className="inner">
-                  <h1>Contact Us</h1>
+                  <h1 className="mt-3">Contact Us</h1>
                   <form
                     action="https://formsubmit.co/e827bd8fd2a95d7e7576547bb1aad862"
                     method="POST"

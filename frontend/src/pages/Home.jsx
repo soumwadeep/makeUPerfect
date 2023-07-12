@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import homepic from "../images/home.webp";
 import { NavLink } from "react-router-dom";
-import Navbar from "./Navbar";
+import Navbar from "../components/Navbar";
 const Home = () => {
   useEffect(() => {
     document.title = "Home | makeUPerfect";
@@ -15,7 +15,7 @@ const Home = () => {
             <div className="outer">
               <div className="middle">
                 <div className="inner">
-                  <h1>Welcome To makeUPerfect</h1>
+                  <h1 className="mt-3">Welcome To makeUPerfect</h1>
                   <br />
                   <p>
                     Feeling Depressed Due To Lack Of Practice? Want To Excel in

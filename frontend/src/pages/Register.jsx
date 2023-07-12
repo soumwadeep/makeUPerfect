@@ -4,7 +4,7 @@ import { NavLink } from "react-router-dom";
 import signuppic from "../images/signup.webp";
 import { register } from "../apiCalls/user";
 import { UserContext } from "../context/UserContext";
-import Navbar from "./Navbar";
+import Navbar from "../components/Navbar";
 
 const Register = () => {
   useEffect(() => {

@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import thankyou from "../images/thankyou.webp";
-import Navbar from "./Navbar";
+import Navbar from "../components/Navbar";
 const ThankYou = () => {
   useEffect(() => {
     document.title = "Thank You | makeUPerfect";

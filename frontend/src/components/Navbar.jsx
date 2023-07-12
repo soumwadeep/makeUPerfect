@@ -26,7 +26,7 @@ const Navbar = () => {
             data-bs-target="#offcanvasNavbar"
             aria-controls="offcanvasNavbar"
           >
-            <span className="navbar-toggler-icon"></span>
+            <i className="fa-solid fa-bars-staggered icons"></i>
           </button>
           <div
             className="offcanvas offcanvas-end"

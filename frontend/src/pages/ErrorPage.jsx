@@ -1,6 +1,6 @@
 import { useEffect } from "react";
-import aboutpic from "../images/about.webp";
-import Navbar from "./Navbar";
+import errorimg from "../images/errorimg.webp";
+import Navbar from "../components/Navbar";
 const ErrorPage = () => {
   useEffect(() => {
     document.title = "404 | makeUPerfect";
@@ -14,7 +14,7 @@ const ErrorPage = () => {
             <div className="outer">
               <div className="middle">
                 <div className="inner">
-                  <img src={aboutpic} alt="about" id="animateimg" />
+                  <img src={errorimg} alt="about" id="animateimg" />
                 </div>
               </div>
             </div>

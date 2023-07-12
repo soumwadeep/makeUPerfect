@@ -3,7 +3,7 @@
 import { useContext, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { UserContext } from "../context/UserContext";
-import Sidebar from "./Sidebar";
+import Sidebar from "../components/Sidebar";
 import profile from "../images/profile.webp";
 import { logout } from "../apiCalls/user";
 

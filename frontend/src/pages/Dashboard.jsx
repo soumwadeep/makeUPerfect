@@ -1,9 +1,8 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable no-unused-vars */
 import { useState, useEffect } from "react";
-import { Link, useNavigate } from "react-router-dom";
-import Sidebar from "./Sidebar";
-import Footer from "./Footer";
+import { useNavigate } from "react-router-dom";
+import Sidebar from "../components/Sidebar";
 import dashboardpic from "../images/todo.webp";
 
 const Dashboard = () => {

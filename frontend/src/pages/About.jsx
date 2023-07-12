@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import aboutpic from "../images/about.webp";
-import Navbar from "./Navbar";
+import Navbar from "../components/Navbar";
 const About = () => {
   useEffect(() => {
     document.title = "About Us | makeUPerfect";

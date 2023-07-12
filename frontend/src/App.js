@@ -1,13 +1,13 @@
-import { Route, Routes } from "react-router-dom";
-import Home from "./components/Home";
+import { Route, Routes, Navigate } from "react-router-dom";
+import Home from "./pages/Home";
 import Footer from "./components/Footer";
-import Register from "./components/Register";
-import Login from "./components/Login";
-import Profile from "./components/Profile";
-import ErrorPage from "./components/ErrorPage";
-import About from "./components/About";
-import Contact from "./components/Contact";
-import Dashboard from "./components/Dashboard";
+import Register from "./pages/Register";
+import Login from "./pages/Login";
+import Profile from "./pages/Profile";
+import ErrorPage from "./pages/ErrorPage";
+import About from "./pages/About";
+import Contact from "./pages/Contact";
+import Dashboard from "./pages/Dashboard";
 import { useContext, useEffect } from "react";
 import { UserContext } from "./context/UserContext";
 import { getUser } from "./apiCalls/user";
@@ -24,15 +24,12 @@ const App = () => {
         if (res.data && res.data.user) {
           setUser(res.data.user);
         } else {
-          // Handle the case when the response is empty
           setUser(null);
         }
       } catch (error) {
-        // Handle the API call error
         setUser(null);
       }
     };
-
     fetchData();
   }, []);
 
@@ -83,7 +80,8 @@ const App = () => {
               </ProtectedRoutes>
             }
           />
-          <Route path="*" element={ErrorPage} />
+          <Route exact path="/404" element={<ErrorPage />}></Route>
+          <Route path="*" element={<Navigate to="/404" replace />} />
         </Routes>
       </div>
       <Footer />
