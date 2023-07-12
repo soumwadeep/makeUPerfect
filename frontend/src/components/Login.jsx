@@ -1,5 +1,7 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import { useNavigate, NavLink } from "react-router-dom";
+import { login } from "../apiCalls/user";
+import { UserContext } from "../context/UserContext";
 import signinpic from "../images/login.webp";
 
 const Login = () => {
@@ -8,6 +10,23 @@ const Login = () => {
   }, []);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const { user, setUser } = useContext(UserContext);
+  const navigate = useNavigate();
+
+  const submitHandler = async (e) => {
+    e.preventDefault();
+    const data = { email, password };
+    const response = await login(data);
+    if (response.status === 200) {
+      alert("Welcome To makeUPerfect.Let's Continue Our Journey!");
+      setUser(response.data.user);
+      navigate("/user/dashboard");
+    } else {
+      alert(response);
+      return;
+    }
+  };
+
   return (
     <section>
       <div className="row">
@@ -18,7 +37,7 @@ const Login = () => {
                 <div className="inner">
                   <h1>Login</h1>
                   <br />
-                  <form>
+                  <form onSubmit={submitHandler}>
                     <div className="mb-3">
                       <label className="form-label">Email</label>
                       <input

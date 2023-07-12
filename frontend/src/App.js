@@ -8,6 +8,7 @@ import Profile from "./components/Profile";
 import ErrorPage from "./components/ErrorPage";
 import About from "./components/About";
 import Contact from "./components/Contact";
+import Dashboard from "./components/Dashboard";
 
 const App = () => {
   return (
@@ -20,6 +21,7 @@ const App = () => {
           <Route exact path="/contact" element={<Contact />}></Route>
           <Route exact path="/user/register" element={<Register />}></Route>
           <Route exact path="/user/login" element={<Login />}></Route>
+          <Route exact path="/user/dashboard" element={<Dashboard />}></Route>
           <Route exact path="/user/profile" element={<Profile />}></Route>
           <Route exact path="/todo/create" element={<Profile />}></Route>
           <Route exact path="/" element={<Navigate to="/home" replace />} />

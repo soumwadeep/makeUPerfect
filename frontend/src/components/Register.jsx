@@ -32,7 +32,7 @@ const Register = () => {
     if (response.status === 201) {
       alert("Welcome To makeUPerfect.You Are Registered!");
       setUser(response.data.user);
-      navigate("/");
+      navigate("/user/login");
     } else {
       alert(response);
       return;
