@@ -31,7 +31,7 @@ const Sidebar = () => {
       >
         <i className="fa-solid fa-bars"></i> &nbsp;Menu
       </button>
-      <NavLink to="/Dashboard">
+      <NavLink to="/user/dashboard">
         <button className="btn btn-danger sticky-top mb-3 backbtn">
           &#8678; Go Back
         </button>
@@ -59,7 +59,7 @@ const Sidebar = () => {
             className={({ isActive, isPending }) =>
               isActive ? "nav-link-active" : isPending ? "nav-link" : "nav-link"
             }
-            to="/Dashboard"
+            to="/user/dashboard"
           >
             Home
           </NavLink>

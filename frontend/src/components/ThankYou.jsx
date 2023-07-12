@@ -1,11 +1,13 @@
 import { useEffect } from "react";
 import thankyou from "../images/thankyou.webp";
+import Navbar from "./Navbar";
 const ThankYou = () => {
   useEffect(() => {
     document.title = "Thank You | makeUPerfect";
   }, []);
   return (
-    <>
+    <div>
+      <Navbar />
       <section id="thankyou">
         <div className="row">
           <div className="col-sm">
@@ -38,7 +40,7 @@ const ThankYou = () => {
           </div>
         </div>
       </section>
-    </>
+    </div>
   );
 };
 

@@ -19,8 +19,8 @@ const Profile = () => {
     const response = await logout();
     if (response.status === 200) {
       alert("You Are Logged Out Successfully!");
-      setUser({});
       navigate("/user/login");
+      setUser({});
     } else {
       alert(response);
       return;

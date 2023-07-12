@@ -1,5 +1,4 @@
-import { Route, Routes, Navigate } from "react-router-dom";
-import Navbar from "./components/Navbar";
+import { Route, Routes } from "react-router-dom";
 import Home from "./components/Home";
 import Footer from "./components/Footer";
 import Register from "./components/Register";
@@ -20,20 +19,31 @@ const App = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      const res = await getUser();
-      setUser(res.data.user);
+      try {
+        const res = await getUser();
+        if (res.data && res.data.user) {
+          setUser(res.data.user);
+        } else {
+          // Handle the case when the response is empty
+          setUser(null);
+        }
+      } catch (error) {
+        // Handle the API call error
+        setUser(null);
+      }
     };
+
     fetchData();
-  });
+  }, []);
+
   return (
     <div>
-      <Navbar />
       <div className="container">
         <Routes>
           <Route
             exact
-            path="/home"
-            element={user._id ? <Dashboard /> : <Home />}
+            path="/"
+            element={user && user._id ? <Dashboard /> : <Home />}
           ></Route>
           <Route exact path="/about" element={<About />}></Route>
           <Route exact path="/contact" element={<Contact />}></Route>
@@ -41,7 +51,7 @@ const App = () => {
             exact
             path="/user/register"
             element={
-              <UnProtectedRoutes loggedIn={user._id ? true : false}>
+              <UnProtectedRoutes loggedIn={user && user._id ? true : false}>
                 <Register />
               </UnProtectedRoutes>
             }
@@ -50,23 +60,29 @@ const App = () => {
             exact
             path="/user/login"
             element={
-              <UnProtectedRoutes loggedIn={user._id ? true : false}>
+              <UnProtectedRoutes loggedIn={user && user._id ? true : false}>
                 <Login />
               </UnProtectedRoutes>
             }
           />
-          <Route exact path="/user/dashboard" element={<Dashboard />}></Route>
+          <Route
+            exact
+            path="/user/dashboard"
+            element={
+              <ProtectedRoutes loggedIn={user && user._id ? true : false}>
+                <Dashboard />
+              </ProtectedRoutes>
+            }
+          />
           <Route
             exact
             path="/user/profile"
             element={
-              <ProtectedRoutes loggedIn={user._id ? true : false}>
+              <ProtectedRoutes loggedIn={user && user._id ? true : false}>
                 <Profile />
               </ProtectedRoutes>
             }
           />
-          {/* <Route exact path="/todo/create" element={<Profile />}></Route> */}
-          <Route exact path="/" element={<Navigate to="/home" replace />} />
           <Route path="*" element={ErrorPage} />
         </Routes>
       </div>

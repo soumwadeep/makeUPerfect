@@ -42,7 +42,6 @@ const Dashboard = () => {
           <h1 className="text-center mb-3">Your Topics</h1>
         </div>
       </div>
-      <Footer />
     </section>
   );
 };

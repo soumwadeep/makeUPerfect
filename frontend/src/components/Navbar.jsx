@@ -15,7 +15,7 @@ const Navbar = () => {
     <>
       <nav className="navbar sticky-top navbar-expand-lg text-center">
         <div className="container-fluid">
-          <NavLink className="navbar-brand" to="/home">
+          <NavLink className="navbar-brand" to="/">
             <img src={icon} alt="Logo" className="logo" /> make<b>U</b>Perfect
           </NavLink>
           <button
@@ -53,7 +53,7 @@ const Navbar = () => {
                     className={(navData) =>
                       navData.isActive ? "nav-link-active" : "nav-link"
                     }
-                    to="/home"
+                    to="/"
                     onClick={() => {
                       window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
                       toggleNav();
