@@ -16,6 +16,7 @@ import ProtectedRoutes from "./components/ProtectedRoutes";
 import CreateTodo from "./pages/CreateTodo";
 import UpdateProfile from "./pages/UpdateProfile";
 import UpdatePassword from "./pages/UpdatePassword";
+import ViewTodo from "./pages/ViewTodo";
 
 const App = () => {
   const { user, setUser } = useContext(UserContext);
@@ -89,6 +90,15 @@ const App = () => {
             element={
               <ProtectedRoutes loggedIn={user && user._id ? true : false}>
                 <CreateTodo />
+              </ProtectedRoutes>
+            }
+          />
+          <Route
+            exact
+            path="/todo/view/:id"
+            element={
+              <ProtectedRoutes loggedIn={user && user._id ? true : false}>
+                <ViewTodo />
               </ProtectedRoutes>
             }
           />

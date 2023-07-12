@@ -1,24 +1,43 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
+import { deleteTodo } from "../apiCalls/todo";
 
-const TodoItems = () => {
+const TodoItems = ({ item }) => {
+  const navigate = useNavigate();
+  const deleteHandler = async () => {
+    if (window.confirm("Are You Sure To Delete This Todo?")) {
+      const response = await deleteTodo(item._id);
+      if (response.status === 200) {
+        alert(response.data.msg);
+        window.location.reload();
+      } else {
+        alert(response.data.msg);
+        return;
+      }
+    }
+  };
   return (
-    <>
-      <tr>
-        <th scope="row">1</th>
-        <td>Title1</td>
-        <td>Desc1</td>
-        <td>completed1</td>
-        <td>
-          <button className="btn btn-success">View</button>
-        </td>
-        <td>
-          <button className="btn btn-warning">Update</button>
-        </td>
-        <td>
-          <button className="btn btn-danger">Delete</button>
-        </td>
-      </tr>
-    </>
+    <tr>
+      <td>{item.title}</td>
+      <td>{item.description}</td>
+      <td>{item.completed ? "Completed" : "Not Completed"}</td>
+      <td>
+        <button
+          className="btn btn-success"
+          onClick={() => navigate(`/todo/view/${item._id}`)}
+        >
+          View
+        </button>
+      </td>
+      <td>
+        <button className="btn btn-warning">Update</button>
+      </td>
+      <td>
+        <button className="btn btn-danger" onClick={deleteHandler}>
+          Delete
+        </button>
+      </td>
+    </tr>
   );
 };
 
