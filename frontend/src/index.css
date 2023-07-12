@@ -1,4 +1,155 @@
-body
-{
-  font-family: Georgia;
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap');
+
+body {
+  font-family: 'Inter', sans-serif !important;
+  font-weight: 500;
+  background: rgb(244, 248, 238);
+}
+
+section {
+  width: 100%;
+  height: auto;
+  min-height: 80vh;
+}
+
+img {
+  width: 100%;
+  height: auto;
+  border-radius: 20px;
+  margin-bottom: 20px;
+}
+
+a {
+  text-decoration: none;
+}
+
+p {
+  font-weight: 700;
+}
+
+input,
+textarea {
+  background: transparent !important;
+}
+
+.logo {
+  width: 32px;
+  border-radius: 0;
+  margin-bottom: 10px;
+}
+
+#error-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100vh;
+}
+
+.navbar,
+.offcanvas {
+  background: rgb(244, 248, 238);
+}
+
+.nav-link {
+  cursor: pointer !important;
+}
+
+.nav-link-active {
+  display: block;
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  color: orangered !important;
+  font-weight: 900px !important;
+  font-style: bold;
+  border: 2px solid orange;
+  border-radius: 10px;
+  -webkit-box-shadow: -1px 10px 5px 0px rgba(0, 0, 0, 0.07);
+  -moz-box-shadow: -1px 10px 5px 0px rgba(0, 0, 0, 0.07);
+  box-shadow: -1px 10px 5px 0px rgba(0, 0, 0, 0.07);
+}
+
+/* Vertically Align Centre */
+.outer {
+  display: table;
+  height: 100%;
+  width: 100%;
+}
+
+.middle {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.inner {
+  margin-left: auto;
+  margin-right: auto;
+  height: auto;
+  width: 100%;
+}
+
+/* Animate Image */
+#animateimg {
+  animation: up-down 2s ease-in-out infinite alternate-reverse both;
+}
+
+@-webkit-keyframes up-down {
+  0% {
+    transform: translateY(10px);
+  }
+
+  100% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes up-down {
+  0% {
+    transform: translateY(10px);
+  }
+
+  100% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Dashboard */
+.card {
+  width: 100%;
+  height: auto;
+  margin-bottom: 20px;
+  -webkit-box-shadow: -1px -1px 15px 0px rgba(158, 5, 158, 1);
+  -moz-box-shadow: -1px -1px 15px 0px rgba(158, 5, 158, 1);
+  box-shadow: -1px -1px 15px 0px rgba(158, 5, 158, 1);
+  cursor: pointer;
+}
+
+.card img {
+  border-radius: 0;
+}
+
+.btn {
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
+
+.backbtn {
+  position: fixed;
+  right: 0;
+  top: 0;
+}
+
+.task-box {
+  background-color: wheat;
+  border-radius: 10px;
+  padding: 10px;
+  width: 100%;
+  max-width: 600px;
+}
+
+.btngo {
+  -webkit-box-shadow: 0px 2px 33px 1px rgba(17, 235, 93, 1);
+  -moz-box-shadow: 0px 2px 33px 1px rgba(17, 235, 93, 1);
+  box-shadow: 0px 2px 33px 1px rgba(17, 235, 93, 1);
 }
