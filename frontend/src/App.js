@@ -13,6 +13,9 @@ import { UserContext } from "./context/UserContext";
 import { getUser } from "./apiCalls/user";
 import UnProtectedRoutes from "./components/UnProtectedRoutes";
 import ProtectedRoutes from "./components/ProtectedRoutes";
+import CreateTodo from "./pages/CreateTodo";
+import UpdateProfile from "./pages/UpdateProfile";
+import UpdatePassword from "./pages/UpdatePassword";
 
 const App = () => {
   const { user, setUser } = useContext(UserContext);
@@ -77,6 +80,33 @@ const App = () => {
             element={
               <ProtectedRoutes loggedIn={user && user._id ? true : false}>
                 <Profile />
+              </ProtectedRoutes>
+            }
+          />
+          <Route
+            exact
+            path="/todo/create"
+            element={
+              <ProtectedRoutes loggedIn={user && user._id ? true : false}>
+                <CreateTodo />
+              </ProtectedRoutes>
+            }
+          />
+          <Route
+            exact
+            path="/user/update"
+            element={
+              <ProtectedRoutes loggedIn={user && user._id ? true : false}>
+                <UpdateProfile />
+              </ProtectedRoutes>
+            }
+          />
+          <Route
+            exact
+            path="/user/updatepassword"
+            element={
+              <ProtectedRoutes loggedIn={user && user._id ? true : false}>
+                <UpdatePassword />
               </ProtectedRoutes>
             }
           />

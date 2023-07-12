@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 import { UserContext } from "../context/UserContext";
 import Sidebar from "../components/Sidebar";
 import profile from "../images/profile.webp";
-import { logout } from "../apiCalls/user";
+import { deleteUser, logout } from "../apiCalls/user";
 
 const Profile = () => {
   useEffect(() => {
@@ -22,8 +22,22 @@ const Profile = () => {
       navigate("/user/login");
       setUser({});
     } else {
-      alert(response);
+      alert(response.response.data.msg);
       return;
+    }
+  };
+
+  const deleteAccountHandler = async (e) => {
+    if (window.confirm("Are You Sure You Want To Delete Your Account?")) {
+      const response = await deleteUser();
+      if (response.status === 200) {
+        alert("Your Account Has Been Deleted Successfully!");
+        setUser({});
+        navigate("/user/login");
+      } else {
+        alert(response.response.data.msg);
+        return;
+      }
     }
   };
 
@@ -48,10 +62,18 @@ const Profile = () => {
                     {user.email}
                   </h4>
                   <br />
-                  <button type="submit" className="btn btn-success btn-lg">
+                  <button
+                    type="submit"
+                    onClick={() => navigate("/user/update")}
+                    className="btn btn-success btn-lg"
+                  >
                     Update Profile
                   </button>
-                  <button type="submit" className="btn btn-warning btn-lg">
+                  <button
+                    type="submit"
+                    onClick={() => navigate("/user/updatepassword")}
+                    className="btn btn-warning btn-lg"
+                  >
                     Update Password
                   </button>
                   <button
@@ -61,7 +83,11 @@ const Profile = () => {
                   >
                     Log Out
                   </button>
-                  <button type="submit" className="btn btn-danger btn-lg">
+                  <button
+                    type="submit"
+                    className="btn btn-danger btn-lg"
+                    onClick={deleteAccountHandler}
+                  >
                     Delete Account
                   </button>
                 </div>

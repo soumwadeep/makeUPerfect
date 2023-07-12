@@ -23,7 +23,7 @@ const Login = () => {
       setUser(response.data.user);
       navigate("/user/dashboard");
     } else {
-      alert(response);
+      alert(response.response.data.msg);
       return;
     }
   };
@@ -74,7 +74,7 @@ const Login = () => {
                       <p className="mt-3">
                         New User?
                         <NavLink
-                          to="/SignUp"
+                          to="/user/register"
                           style={{ color: "orangered", fontWeight: "900px" }}
                         >
                           {" "}

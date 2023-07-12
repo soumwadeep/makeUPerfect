@@ -35,7 +35,7 @@ const Register = () => {
       setUser(response.data.user);
       navigate("/user/login");
     } else {
-      alert(response);
+      alert(response.response.data.msg);
       return;
     }
   };
