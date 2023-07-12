@@ -1,18 +1,43 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { NavLink } from "react-router-dom";
 import signuppic from "../images/signup.webp";
+import { register } from "../apiCalls/user";
+import { UserContext } from "../context/UserContext";
 
 const Register = () => {
   useEffect(() => {
     document.title = "Register | makeUPerfect";
   }, []);
-  const navigate = useNavigate();
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [age, setAge] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
+  const navigate = useNavigate();
+  const { user, setUser } = useContext(UserContext);
+  const submitHandler = async (e) => {
+    e.preventDefault();
+    if (password !== confirmPassword) {
+      alert("Password Doesn't Matched");
+      return;
+    }
+    const data = {
+      name,
+      email,
+      age,
+      password,
+    };
+    const response = await register(data);
+    if (response.status === 201) {
+      alert("Welcome To makeUPerfect.You Are Registered!");
+      setUser(response.data.user);
+      navigate("/");
+    } else {
+      alert(response);
+      return;
+    }
+  };
   return (
     <section>
       <div className="row">
@@ -31,7 +56,7 @@ const Register = () => {
               <div className="inner">
                 <h1>Register</h1>
                 <br />
-                <form>
+                <form onSubmit={submitHandler}>
                   <div className="mb-3">
                     <label className="form-label">Name</label>
                     <input
