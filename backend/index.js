@@ -5,19 +5,18 @@ import cookieParser from "cookie-parser";
 import todosRoutes from "./routes/todos.js";
 import usersRoutes from "./routes/users.js";
 import topicsRoutes from "./routes/topics.js";
-// import cors from "cors";
+import cors from "cors";
 
 const app = express();
 
 dotenv.config();
 
-// app.use(
-//   cors({
-//     origin: ["http://15.206.100.150:4000"],
-//     methods: ["POST", "GET", "PUT", "DELETE"],
-//     credentials: true,
-//   })
-// );
+app.use(
+  cors({
+    origin: ["http://localhost:3000"],
+    credentials: true,
+  })
+);
 
 app.use(express.json());
 
