@@ -26,7 +26,7 @@ const TopicList = () => {
           topic.map((item) => {
             return (
               <div className="col-sm-4" key={item._id}>
-                <TopicItems key={item._id} item={item} />;
+                <TopicItems key={item._id} item={item} />
               </div>
             );
           })}
