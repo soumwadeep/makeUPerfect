@@ -13,6 +13,7 @@ const ViewTopic = () => {
 
   const [topic, setTopic] = useState({});
   const [todos, setTodos] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
   const { id } = useParams();
 
   useEffect(() => {
@@ -38,6 +39,7 @@ const ViewTopic = () => {
       } else {
         alert(response.response.data.msg);
       }
+      setIsLoading(false);
     };
     fetchTodos();
   }, [topic]);
@@ -79,11 +81,21 @@ const ViewTopic = () => {
       </div>
       <div className="row">
         <h1 className="text-center">Todos Of {topic.heading}</h1>
-        {todos.map((todo) => (
-          <div className="col-sm-4">
-            <TodoItems key={todo._id} item={todo} />
+        {isLoading ? (
+          <div className="d-flex justify-content-center">
+            <div className="spinner-grow text-danger" role="status">
+              <span className="visually-hidden">Loading...</span>
+            </div>
           </div>
-        ))}
+        ) : todos.length > 0 ? (
+          todos.map((todo) => (
+            <div className="col-sm-4" key={todo._id}>
+              <TodoItems key={todo._id} item={todo} />
+            </div>
+          ))
+        ) : (
+          <p className="text-center">No Todos Available.</p>
+        )}
       </div>
     </section>
   );
