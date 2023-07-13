@@ -31,6 +31,22 @@ const ViewTodo = () => {
               <div className="inner">
                 <h1>Todo Viewer</h1>
                 <h4>See The Detailed View Of Your Selected Todo Here!</h4>
+                {todo && (
+                  <div className="todo-view mt-4">
+                    <h1>
+                      Todo Title:
+                      {todo.title}
+                    </h1>
+                    <h4>Completion Status:</h4>
+                    <p>{todo.completed ? "Completed" : "Not Completed"}</p>
+                    <h4>Description:</h4>
+                    <p>{todo.description}</p>
+                    <h4>Created On:</h4>
+                    <p>{todo.createdAt}</p>
+                    <h4>Updated On:</h4>
+                    <p>{todo.updatedAt}</p>
+                  </div>
+                )}
               </div>
             </div>
           </div>
@@ -44,21 +60,6 @@ const ViewTodo = () => {
             </div>
           </div>
         </div>
-      </div>
-      <div className="row">
-        <h1 className="text-center">Todo Info</h1>
-        {todo && (
-          <div className="todo-view">
-            <h1>
-              Title:
-              {todo.title}
-            </h1>
-            <h2>Completed:{todo.completed ? "Completed" : "Not Completed"}</h2>
-            <h4>Description:{todo.description}</h4>
-            <h4>Created On:{todo.createdAt}</h4>
-            <h4>Updated On:{todo.updatedAt}</h4>
-          </div>
-        )}
       </div>
     </section>
   );

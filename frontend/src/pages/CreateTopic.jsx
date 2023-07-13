@@ -8,7 +8,7 @@ import { createTopic } from "../apiCalls/topic";
 
 const CreateTopic = () => {
   useEffect(() => {
-    document.title = "Create Topics | Perfector";
+    document.title = "Create Topic | Perfector";
   }, []);
   const [heading, setTopic] = useState("");
   const [brief, setBrief] = useState("");

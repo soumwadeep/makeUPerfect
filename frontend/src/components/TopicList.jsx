@@ -21,23 +21,16 @@ const TopicList = () => {
   return (
     <div>
       <h1 className="text-center">All Topics</h1>
-      <table className="table table-bordered">
-        <thead>
-          <tr>
-            <th scope="col">Heading</th>
-            <th scope="col">Brief</th>
-            <th scope="col">View</th>
-            <th scope="col">Update</th>
-            <th scope="col">Delete</th>
-          </tr>
-        </thead>
-        <tbody>
-          {topic.length > 0 &&
-            topic.map((item) => {
-              return <TopicItems key={item._id} item={item} />;
-            })}
-        </tbody>
-      </table>
+      <div className="row mt-5">
+        {topic.length > 0 &&
+          topic.map((item) => {
+            return (
+              <div className="col-sm-4" key={item._id}>
+                <TopicItems key={item._id} item={item} />;
+              </div>
+            );
+          })}
+      </div>
     </div>
   );
 };

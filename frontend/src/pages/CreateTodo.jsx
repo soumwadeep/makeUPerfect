@@ -8,7 +8,7 @@ import { createTodo } from "../apiCalls/todo";
 
 const CreateTodo = () => {
   useEffect(() => {
-    document.title = "Create Todos | Perfector";
+    document.title = "Create Todo | Perfector";
   }, []);
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
