@@ -77,15 +77,6 @@ const Sidebar = () => {
             className={({ isActive, isPending }) =>
               isActive ? "nav-link-active" : isPending ? "nav-link" : "nav-link"
             }
-            to="/todo/create"
-          >
-            Create Todo
-          </NavLink>
-          <br />
-          <NavLink
-            className={({ isActive, isPending }) =>
-              isActive ? "nav-link-active" : isPending ? "nav-link" : "nav-link"
-            }
             to="/user/profile"
           >
             Profile

@@ -2,6 +2,10 @@ import mongoose from "mongoose";
 
 const TodoSchema = new mongoose.Schema(
   {
+    topic: {
+      type: String,
+      required: true,
+    },
     title: {
       type: String,
       required: true,

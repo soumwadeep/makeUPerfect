@@ -24,7 +24,7 @@ const Dashboard = () => {
                 <div className="inner">
                   <h1>Welcome To makeUPerfect&apos;s Dashboard!</h1>
                   <h3>Start Your Journey With Us By Creating Your Desired Topics!</h3>
-                  <button className="btn btn-info btn-lg" onClick={() => navigate("/topic/create")}>Click Here To Create A Topic</button>
+                  <button className="btn btn-info btn-lg focuscolour mt-3" onClick={() => navigate("/topic/create")}>Click Here To Create A Topic Now</button>
                 </div>
               </div>
             </div>
@@ -41,7 +41,6 @@ const Dashboard = () => {
         </div>
         <div className="row">
           <TopicList />
-          {/* <h1 className="text-center mb-3">Your Topics</h1> */}
           <TodoList />
         </div>
       </div>

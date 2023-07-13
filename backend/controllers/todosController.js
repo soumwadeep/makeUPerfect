@@ -28,9 +28,10 @@ export const getTodo = async (req, res) => {
 };
 
 export const createTodo = async (req, res) => {
-  const { title, description } = req.body;
+  const { topic,title, description } = req.body;
   try {
     const todo = await Todo.create({
+      topic,
       title,
       description,
       completed: false,

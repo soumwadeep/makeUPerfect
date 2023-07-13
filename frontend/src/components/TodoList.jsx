@@ -21,24 +21,16 @@ const TodoList = () => {
   return (
     <div>
       <h1 className="text-center">All Todos</h1>
-      <table className="table table-bordered">
-        <thead>
-          <tr>
-            <th scope="col">Title</th>
-            <th scope="col">Description</th>
-            <th scope="col">Completed</th>
-            <th scope="col">View</th>
-            <th scope="col">Update</th>
-            <th scope="col">Delete</th>
-          </tr>
-        </thead>
-        <tbody>
-          {todo.length > 0 &&
-            todo.map((item) => {
-              return <TodoItems key={item._id} item={item} />;
-            })}
-        </tbody>
-      </table>
+      <div className="row mt-5">
+        {todo.length > 0 &&
+          todo.map((item) => {
+            return (
+              <div className="col-sm-4" key={item._id}>
+                <TodoItems key={item._id} item={item} />
+              </div>
+            );
+          })}
+      </div>
     </div>
   );
 };

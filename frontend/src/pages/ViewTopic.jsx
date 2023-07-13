@@ -1,15 +1,20 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { getTopic } from "../apiCalls/topic";
+import { getTodos } from "../apiCalls/todo";
 import Sidebar from "../components/Sidebar";
 import dashboardpic from "../images/topic.webp";
+import TodoItems from "../components/TodoItems";
 
 const ViewTopic = () => {
   useEffect(() => {
     document.title = "View Topic | makeUPerfect";
   }, []);
+
   const [topic, setTopic] = useState({});
+  const [todos, setTodos] = useState([]);
   const { id } = useParams();
+
   useEffect(() => {
     const fetchData = async () => {
       const response = await getTopic(id);
@@ -20,7 +25,23 @@ const ViewTopic = () => {
       }
     };
     fetchData();
-  });
+  }, [id]);
+
+  useEffect(() => {
+    const fetchTodos = async () => {
+      const response = await getTodos();
+      if (response.status === 200) {
+        const filteredTodos = response.data.todos.filter(
+          (todo) => todo.topic === topic._id
+        );
+        setTodos(filteredTodos);
+      } else {
+        alert(response.response.data.msg);
+      }
+    };
+    fetchTodos();
+  }, [topic]);
+
   return (
     <section>
       <Sidebar />
@@ -33,10 +54,7 @@ const ViewTopic = () => {
                 <h4>See The Detailed View Of Your Selected Topic Here!</h4>
                 {topic && (
                   <div className="todo-view mt-4">
-                    <h1>
-                      Topic Name:
-                      {topic.heading}
-                    </h1>
+                    <h1>Topic Name: {topic.heading}</h1>
                     <h4>About Topic:</h4>
                     <p>{topic.brief}</p>
                     <h4>Created On:</h4>
@@ -58,6 +76,14 @@ const ViewTopic = () => {
             </div>
           </div>
         </div>
+      </div>
+      <div className="row">
+        <h1 className="text-center">Todos Of {topic.heading}</h1>
+        {todos.map((todo) => (
+          <div className="col-sm-4">
+            <TodoItems key={todo._id} item={todo} />
+          </div>
+        ))}
       </div>
     </section>
   );

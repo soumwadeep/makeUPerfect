@@ -19,6 +19,10 @@ const TopicItems = ({ item }) => {
     }
   };
 
+  const createTodoHandler = () => {
+    navigate(`/todo/create?topicId=${item._id}`);
+  };
+
   return (
     <div className="row">
       <div className="col-sm">
@@ -27,20 +31,23 @@ const TopicItems = ({ item }) => {
           <div className="card-body">
             <h5 className="card-title">{item.heading}</h5>
             <p className="card-text">{item.brief}</p>
+            <button className="btn btn-info" onClick={createTodoHandler}>
+              Create A Todo
+            </button>
             <button
-              className="btn btn-success"
+              className="btn btn-primary"
               onClick={() => navigate(`/topic/view/${item._id}`)}
             >
-              View
+              Show All Todos Of {item.heading}
             </button>
             <button
               className="btn btn-warning"
               onClick={() => navigate(`/topic/update/${item._id}`)}
             >
-              Update
+              Update Topic Details
             </button>
             <button className="btn btn-danger" onClick={deleteHandler}>
-              Delete
+              Delete This Topic
             </button>
           </div>
         </div>

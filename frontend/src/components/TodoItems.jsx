@@ -17,32 +17,35 @@ const TodoItems = ({ item }) => {
     }
   };
   return (
-    <tr>
-      <td>{item.title}</td>
-      <td>{item.description}</td>
-      <td>{item.completed ? "Completed" : "Not Completed"}</td>
-      <td>
-        <button
-          className="btn btn-success"
-          onClick={() => navigate(`/todo/view/${item._id}`)}
-        >
-          View
-        </button>
-      </td>
-      <td>
-        <button
-          className="btn btn-warning"
-          onClick={() => navigate(`/todo/update/${item._id}`)}
-        >
-          Update
-        </button>
-      </td>
-      <td>
-        <button className="btn btn-danger" onClick={deleteHandler}>
-          Delete
-        </button>
-      </td>
-    </tr>
+    <div className="row">
+      <div className="col-sm">
+        <div className="card">
+          <div className="card-body">
+            <h5 className="card-title">{item.title}</h5>
+            <h6 className="card-subtitle mb-2 text-body-secondary">
+              Status: {item.completed ? "Completed" : "Not Completed"}
+            </h6>
+            <p className="card-text">Topic ID: {item.topic}</p>
+            <p className="card-text">{item.description}</p>
+            <button
+              className="btn btn-success"
+              onClick={() => navigate(`/todo/view/${item._id}`)}
+            >
+              View This Todo
+            </button>
+            <button
+              className="btn btn-warning"
+              onClick={() => navigate(`/todo/update/${item._id}`)}
+            >
+              Update This Todo
+            </button>
+            <button className="btn btn-danger" onClick={deleteHandler}>
+              Delete This Todo
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
   );
 };
 

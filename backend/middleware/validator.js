@@ -42,6 +42,7 @@ export const updatePasswordRules = [
 ];
 
 export const createTodoRules = [
+  check("topic", "Topic Is Required").notEmpty().trim().escape(),
   check("title", "Title Is Required").notEmpty().trim().escape(),
   check("description", "Description Is Required").notEmpty().trim().escape(),
 ];

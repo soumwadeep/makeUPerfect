@@ -1,7 +1,5 @@
-/* eslint-disable react-hooks/exhaustive-deps */
-/* eslint-disable no-unused-vars */
-import { useState, useEffect, useContext } from "react";
-import { useNavigate } from "react-router-dom";
+import { useState, useEffect } from "react";
+import { useNavigate, useLocation } from "react-router-dom";
 import Sidebar from "../components/Sidebar";
 import dashboardpic from "../images/todo.webp";
 import { createTodo } from "../apiCalls/todo";
@@ -13,9 +11,15 @@ const CreateTodo = () => {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const navigate = useNavigate();
+  const location = useLocation();
+
+  // Fetch the topic ID from the URL parameters
+  const searchParams = new URLSearchParams(location.search);
+  const topicId = searchParams.get("topicId");
+
   const submitHandler = async (e) => {
     e.preventDefault();
-    const data = { title, description };
+    const data = { topic: topicId, title, description };
     const response = await createTodo(data);
     if (response.status === 201) {
       alert("Todo Created Successfully!");
