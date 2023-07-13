@@ -11,13 +11,13 @@ const app = express();
 
 dotenv.config();
 
-// app.use(
-//   cors({
-//     origin: ["https://make-u-perfect.vercel.app/"],
-//     methods: ["POST", "GET", "PUT", "DELETE"],
-//     credentials: true,
-//   })
-// );
+app.use(
+  cors({
+    origin: ["http://15.206.100.150:4000"],
+    methods: ["POST", "GET", "PUT", "DELETE"],
+    credentials: true,
+  })
+);
 
 app.use(express.json());
 
