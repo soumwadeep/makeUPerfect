@@ -4,6 +4,7 @@ import connectionDB from "./database/connectionDB.js";
 import cookieParser from "cookie-parser";
 import todosRoutes from "./routes/todos.js";
 import usersRoutes from "./routes/users.js";
+import topicsRoutes from "./routes/topics.js";
 
 const app = express();
 
@@ -18,6 +19,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 
 app.use("/api/todos", todosRoutes);
+app.use("/api/topics", topicsRoutes);
 app.use("/api/users", usersRoutes);
 
 app.listen(process.env.PORT, () =>

@@ -5,16 +5,19 @@ import App from "./App";
 import { BrowserRouter } from "react-router-dom";
 import { UserContextProvider } from "./context/UserContext";
 import { TodoContextProvider } from "./context/TodoContext";
+import { TopicContextProvider } from "./context/TopicContext";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <UserContextProvider>
-      <TodoContextProvider>
-        <BrowserRouter>
-          <App />
-        </BrowserRouter>
-      </TodoContextProvider>
+      <TopicContextProvider>
+        <TodoContextProvider>
+          <BrowserRouter>
+            <App />
+          </BrowserRouter>
+        </TodoContextProvider>
+      </TopicContextProvider>
     </UserContextProvider>
   </React.StrictMode>
 );

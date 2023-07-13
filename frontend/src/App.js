@@ -18,6 +18,9 @@ import UpdateProfile from "./pages/UpdateProfile";
 import UpdatePassword from "./pages/UpdatePassword";
 import ViewTodo from "./pages/ViewTodo";
 import UpdateTodo from "./pages/UpdateTodo";
+import CreateTopic from "./pages/CreateTopic";
+import ViewTopic from "./pages/ViewTopic";
+import UpdateTopic from "./pages/UpdateTopic";
 
 const App = () => {
   const { user, setUser } = useContext(UserContext);
@@ -85,6 +88,7 @@ const App = () => {
               </ProtectedRoutes>
             }
           />
+          {/* Todos */}
           <Route
             exact
             path="/todo/create"
@@ -109,6 +113,34 @@ const App = () => {
             element={
               <ProtectedRoutes loggedIn={user && user._id ? true : false}>
                 <UpdateTodo />
+              </ProtectedRoutes>
+            }
+          />
+          {/* Topics */}
+          <Route
+            exact
+            path="/topic/create"
+            element={
+              <ProtectedRoutes loggedIn={user && user._id ? true : false}>
+                <CreateTopic />
+              </ProtectedRoutes>
+            }
+          />
+          <Route
+            exact
+            path="/topic/view/:id"
+            element={
+              <ProtectedRoutes loggedIn={user && user._id ? true : false}>
+                <ViewTopic />
+              </ProtectedRoutes>
+            }
+          />
+          <Route
+            exact
+            path="/topic/update/:id"
+            element={
+              <ProtectedRoutes loggedIn={user && user._id ? true : false}>
+                <UpdateTopic />
               </ProtectedRoutes>
             }
           />

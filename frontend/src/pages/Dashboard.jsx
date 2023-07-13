@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 import Sidebar from "../components/Sidebar";
 import dashboardpic from "../images/todo.webp";
 import TodoList from "../components/TodoList";
+import TopicList from "../components/TopicList";
 
 const Dashboard = () => {
   useEffect(() => {
@@ -22,6 +23,8 @@ const Dashboard = () => {
               <div className="middle">
                 <div className="inner">
                   <h1>Welcome To makeUPerfect&apos;s Dashboard!</h1>
+                  <h3>Start Your Journey With Us By Creating Your Desired Topics!</h3>
+                  <button className="btn btn-info btn-lg" onClick={() => navigate("/topic/create")}>Click Here To Create A Topic</button>
                 </div>
               </div>
             </div>
@@ -37,8 +40,9 @@ const Dashboard = () => {
           </div>
         </div>
         <div className="row">
+          <TopicList />
           {/* <h1 className="text-center mb-3">Your Topics</h1> */}
-          <TodoList/>
+          <TodoList />
         </div>
       </div>
     </section>
