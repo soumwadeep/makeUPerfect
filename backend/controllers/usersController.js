@@ -2,6 +2,7 @@ import User from "../models/User.js";
 import jwt from "jsonwebtoken";
 import bcrypt from "bcrypt";
 import Todo from "../models/Todo.js";
+import Topic from "../models/Topic.js";
 
 export const register = async (req, res) => {
   const { name, phone, email, password, age } = req.body;
@@ -155,6 +156,10 @@ export const deleteUser = async (req, res) => {
     const user = await User.findById(req.user);
     if (!user) {
       return res.status(404).json({ msg: "User Not Found" });
+    }
+    const topics = await Topic.find({ user: req.user });
+    if (topics.length > 0) {
+      await Topic.deleteMany({ user: req.user });
     }
     const todos = await Todo.find({ user: req.user });
     if (todos.length > 0) {
