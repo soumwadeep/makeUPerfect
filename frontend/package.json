@@ -37,5 +37,5 @@
       "last 1 safari version"
     ]
   },
-  "proxy": "http://localhost:4000"
+  "proxy": "https://makeuperfect-backend.onrender.com"
 }

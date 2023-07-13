@@ -10,9 +10,21 @@ const app = express();
 
 dotenv.config();
 
-connectionDB();
+app.use(
+  cors({
+    origin: [""],
+    methods: ["POST", "GET", "PUT", "DELETE"],
+    credentials: true,
+  })
+);
 
 app.use(express.json());
+
+connectionDB();
+
+app.get("/", (req, res) => {
+  res.json("Hello");
+});
 
 app.use(express.urlencoded({ extended: true }));
 
