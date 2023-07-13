@@ -6,6 +6,8 @@ import todosRoutes from "./routes/todos.js";
 import usersRoutes from "./routes/users.js";
 import topicsRoutes from "./routes/topics.js";
 
+import cors from "cors";
+
 const app = express();
 
 dotenv.config();
