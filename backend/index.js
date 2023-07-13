@@ -14,7 +14,7 @@ dotenv.config();
 
 app.use(
   cors({
-    origin: [""],
+    origin: ["https://make-u-perfect.vercel.app/"],
     methods: ["POST", "GET", "PUT", "DELETE"],
     credentials: true,
   })
