@@ -8,31 +8,18 @@ import topicsRoutes from "./routes/topics.js";
 import cors from "cors";
 
 const app = express();
-
+app.use(cors());
 dotenv.config();
-
-app.use(
-  cors({
-    origin: "*",
-  })
-);
-
 app.use(express.json());
-
 connectionDB();
-
 app.get("/", (req, res) => {
   res.json("Hello");
 });
-
 app.use(express.urlencoded({ extended: true }));
-
 app.use(cookieParser());
-
 app.use("/api/todos", todosRoutes);
 app.use("/api/topics", topicsRoutes);
 app.use("/api/users", usersRoutes);
-
 app.listen(process.env.PORT, () =>
   console.log(`Server Is Running On Port ${process.env.PORT}`)
 );
