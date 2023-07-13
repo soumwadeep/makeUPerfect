@@ -44,7 +44,7 @@ const CreateTopic = () => {
             <div className="outer">
               <div className="middle">
                 <div className="inner">
-                  <h1>Start Creating Your Topics Now!</h1>
+                  <h1>Start Creating Your Topic Now!</h1>
                   <br />
                   <form onSubmit={submitHandler}>
                     <div className="mb-3">
