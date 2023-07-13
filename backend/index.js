@@ -5,20 +5,19 @@ import cookieParser from "cookie-parser";
 import todosRoutes from "./routes/todos.js";
 import usersRoutes from "./routes/users.js";
 import topicsRoutes from "./routes/topics.js";
-
 import cors from "cors";
 
 const app = express();
 
 dotenv.config();
 
-app.use(
-  cors({
-    origin: ["https://make-u-perfect.vercel.app/"],
-    methods: ["POST", "GET", "PUT", "DELETE"],
-    credentials: true,
-  })
-);
+// app.use(
+//   cors({
+//     origin: ["https://make-u-perfect.vercel.app/"],
+//     methods: ["POST", "GET", "PUT", "DELETE"],
+//     credentials: true,
+//   })
+// );
 
 app.use(express.json());
 
