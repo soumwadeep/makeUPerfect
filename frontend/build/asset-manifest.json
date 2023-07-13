@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/static/css/main.17b321c9.css",
+    "main.js": "/static/js/main.fe7fba8d.js",
+    "static/media/home.webp": "/static/media/home.2b2001ff615a4c9f0d0d.webp",
+    "static/media/profile.webp": "/static/media/profile.3eb55c7a02aada950014.webp",
+    "static/media/signup.webp": "/static/media/signup.e7d3fcf199609611a17e.webp",
+    "static/media/errorimg.webp": "/static/media/errorimg.62ceef32a2e736e5625b.webp",
+    "static/media/todo.webp": "/static/media/todo.a973a16c46aad787a9ae.webp",
+    "static/media/quote.webp": "/static/media/quote.0636da067bb990f63813.webp",
+    "static/media/topic.webp": "/static/media/topic.dd10b11865f601efb0de.webp",
+    "static/media/about.webp": "/static/media/about.c821b09f4ed03c34521c.webp",
+    "static/media/contact.webp": "/static/media/contact.1fc102b6d29ca278c53e.webp",
+    "static/media/updateprofile.webp": "/static/media/updateprofile.40cf5105a5ca0cb057b4.webp",
+    "static/media/login.webp": "/static/media/login.e68481f67e2e61e8ef11.webp",
+    "static/media/updatepasswordimg.webp": "/static/media/updatepasswordimg.1a4c86f8ced7bae1c5d4.webp",
+    "static/media/icon.webp": "/static/media/icon.3a6a7fffb11a03e5b6e8.webp",
+    "index.html": "/index.html",
+    "main.17b321c9.css.map": "/static/css/main.17b321c9.css.map",
+    "main.fe7fba8d.js.map": "/static/js/main.fe7fba8d.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.17b321c9.css",
+    "static/js/main.fe7fba8d.js"
+  ]
+}
