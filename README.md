@@ -18,33 +18,41 @@ To get started with makeUPerfect, follow these steps:
 2. Install dependencies: `cd makeUPerfect && npm install`
 3. Start the development server: `npm start`
 4. Access makeUPerfect in your browser at `http://localhost:3000`
+5. Install pm2 package globally to start the server in aws and keep it running after closing it.
 
 # Screenshots
 
 ## Home Page
+
 ![image](https://github.com/soumwadeep/makeUPerfect/assets/69720515/b3536eca-0867-4079-98ae-3f8b28dc6f48)
 
 ## About Page
+
 ![image](https://github.com/soumwadeep/makeUPerfect/assets/69720515/f4ad0aaa-117e-4871-9e82-64cd1b7d2b5c)
 
 ## Contact Page
+
 ![image](https://github.com/soumwadeep/makeUPerfect/assets/69720515/5905e4c2-11ba-43d1-9860-7b3e65426d10)
 
 ## Sign Up Page
+
 ![image](https://github.com/soumwadeep/makeUPerfect/assets/69720515/8ab682fa-d548-451c-8dc0-28a996c2f8be)
 
 ## Sign In Page
+
 ![image](https://github.com/soumwadeep/makeUPerfect/assets/69720515/dd851e2c-d4ee-41f9-af82-54ed44e234aa)
 
 # Dashboard Page
+
 ![image](https://github.com/soumwadeep/makeUPerfect/assets/69720515/8958a92f-5bd8-46a1-88a4-4e461f302fbf)
 
 # Todo Page
+
 ![image](https://github.com/soumwadeep/makeUPerfect/assets/69720515/8d609433-1aa7-4db8-8416-4ba346c51481)
 
 # Profile Page
-![image](https://github.com/soumwadeep/makeUPerfect/assets/69720515/d53e04ba-c540-485c-be1d-30efa744f509)
 
+![image](https://github.com/soumwadeep/makeUPerfect/assets/69720515/d53e04ba-c540-485c-be1d-30efa744f509)
 
 # Test Login Details
 
