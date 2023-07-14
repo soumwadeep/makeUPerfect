@@ -27,7 +27,7 @@ const TopicItems = ({ item }) => {
     <div className="row">
       <div className="col-sm">
         <div className="card">
-          <img src={quoteimg} className="card-img-top" alt="topicimg" />
+          <img src={quoteimg} className="card-img-top" alt="topicimg" onClick={createTodoHandler}/>
           <div className="card-body">
             <h5 className="card-title">{item.heading}</h5>
             <p className="card-text">{item.brief}</p>
