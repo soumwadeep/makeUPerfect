@@ -9,17 +9,16 @@ import cors from "cors";
 
 const app = express();
 dotenv.config();
-
-// Enable CORS
 app.use(
   cors({
-    origin: "*",
-    methods: "GET, POST, PUT, DELETE",
-    allowedHeaders: "Content-Type, Authorization",
+    origin: [
+      "http://3.109.139.206",
+      "http://makeuperfect.soumwadeepguha.com",
+      "https://makeuperfect.soumwadeepguha.com",
+    ],
     credentials: true,
   })
 );
-
 app.use(express.json());
 connectionDB();
 app.get("/", (req, res) => {
@@ -30,7 +29,6 @@ app.use(cookieParser());
 app.use("/api/todos", todosRoutes);
 app.use("/api/topics", topicsRoutes);
 app.use("/api/users", usersRoutes);
-
 app.listen(process.env.PORT, () =>
   console.log(`Server Is Running On Port ${process.env.PORT}`)
 );
