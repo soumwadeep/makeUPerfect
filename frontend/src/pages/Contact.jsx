@@ -31,7 +31,7 @@ const Contact = () => {
                       <input
                         type="hidden"
                         name="_next"
-                        value="http://3.109.139.206/ThankYou"
+                        value="http://3.109.139.206/thankyou"
                       />
                     </div>
                     <div className="mb-3">

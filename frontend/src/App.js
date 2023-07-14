@@ -53,6 +53,7 @@ const App = () => {
           ></Route>
           <Route exact path="/about" element={<About />}></Route>
           <Route exact path="/contact" element={<Contact />}></Route>
+          <Route exact path="/thankyou" element={<ThankYou />}></Route>
           <Route
             exact
             path="/user/register"
@@ -163,7 +164,6 @@ const App = () => {
               </ProtectedRoutes>
             }
           />
-          <Route exact path="/thankyou" element={<ThankYou />}></Route>
           <Route exact path="/404" element={<ErrorPage />}></Route>
           <Route path="*" element={<Navigate to="/404" replace />} />
         </Routes>
