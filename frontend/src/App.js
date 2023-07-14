@@ -7,6 +7,7 @@ import Profile from "./pages/Profile";
 import ErrorPage from "./pages/ErrorPage";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
+import ThankYou from "./pages/ThankYou";
 import Dashboard from "./pages/Dashboard";
 import { useContext, useEffect } from "react";
 import { UserContext } from "./context/UserContext";
@@ -162,6 +163,7 @@ const App = () => {
               </ProtectedRoutes>
             }
           />
+          <Route exact path="/thankyou" element={<ThankYou />}></Route>
           <Route exact path="/404" element={<ErrorPage />}></Route>
           <Route path="*" element={<Navigate to="/404" replace />} />
         </Routes>
