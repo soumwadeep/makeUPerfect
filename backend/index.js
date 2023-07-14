@@ -13,7 +13,7 @@ dotenv.config();
 // Enable CORS
 app.use(
   cors({
-    origin: "http://3.109.139.206",
+    origin: "*",
     methods: "GET, POST, PUT, DELETE",
     allowedHeaders: "Content-Type, Authorization",
     credentials: true,
