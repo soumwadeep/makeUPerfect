@@ -1,5 +1,3 @@
-Apologies for the misunderstanding. Here's the corrected version of the README file:
-
 # makeUPerfect
 
 makeUPerfect is a powerful and intuitive web application designed to help you excel in your daily tasks and overcome your weaknesses. With makeUPerfect, you can create personalized to-do lists and track your progress, all in one convenient platform. Built using MERN Stack (MongoDB, Express.js, React.js, and Node.js), makeUPerfect offers a seamless user experience and robust functionality.
@@ -24,20 +22,52 @@ To get started with makeUPerfect, follow these steps:
 ## Screenshots
 
 ### Home Page
+![image](https://github.com/soumwadeep/makeUPerfect/assets/69720515/5c0a49e3-a686-48b2-a59c-a849f1fb72f3)
 
 ### About Page
+![image](https://github.com/soumwadeep/makeUPerfect/assets/69720515/1636e864-7500-429a-a50b-88b105e7ff24)
 
 ### Contact Page
+![image](https://github.com/soumwadeep/makeUPerfect/assets/69720515/d43de358-1936-4cc0-b4ee-d0b36f59eb51)
 
-### Sign Up Page
+### Registration Page
+![image](https://github.com/soumwadeep/makeUPerfect/assets/69720515/a7fbf16a-75d4-4ad2-b07b-d3fe34689989)
 
-### Sign In Page
+### Log In Page
+![image](https://github.com/soumwadeep/makeUPerfect/assets/69720515/5da77895-0ce3-413a-baf6-75392c24ee5b)
 
 ### Dashboard Page
+![image](https://github.com/soumwadeep/makeUPerfect/assets/69720515/9db7e698-58f2-4255-a967-93b46ac03f64)
 
-### Todo Page
+## Topic Creation Page
+![image](https://github.com/soumwadeep/makeUPerfect/assets/69720515/b672936a-ad70-404b-8792-77968093879f)
 
-### Profile Page
+## Topic Viewer Page
+![image](https://github.com/soumwadeep/makeUPerfect/assets/69720515/eff54e1e-bf7d-4aa2-aada-7963d2ae1a11)
+
+## Topic Update Page
+![image](https://github.com/soumwadeep/makeUPerfect/assets/69720515/76753723-2667-413b-9031-de291a6dea42)
+
+## Todo Creation Page
+![image](https://github.com/soumwadeep/makeUPerfect/assets/69720515/f6c4fc11-6313-47a2-8840-324d835b5d82)
+
+## Todo Viewer Page
+![image](https://github.com/soumwadeep/makeUPerfect/assets/69720515/d46c0fab-b53a-4951-a408-c50b815ad321)
+
+## Todo Update Page
+![image](https://github.com/soumwadeep/makeUPerfect/assets/69720515/d25fb9ee-653b-4332-9f2c-ddd0e6ae2b75)
+
+## Profile Page
+![image](https://github.com/soumwadeep/makeUPerfect/assets/69720515/05899eb9-9128-4278-a38f-cb2aa9de3c6b)
+
+## Update Profile Page
+![image](https://github.com/soumwadeep/makeUPerfect/assets/69720515/4fecc59f-ec38-458a-955c-4dc76b7767c3)
+
+## Update Password Page
+![image](https://github.com/soumwadeep/makeUPerfect/assets/69720515/dbb9ee83-dc1c-4c2a-9720-1528e9d8047d)
+
+## Sidebar
+![image](https://github.com/soumwadeep/makeUPerfect/assets/69720515/8adccc95-767a-4d8a-83fc-1b287d6d49a5)
 
 ## Test Login Details
 
