@@ -12,9 +12,9 @@ dotenv.config();
 app.use(
   cors({
     origin: [
-      "http://3.109.139.206",
-      "http://makeuperfect.soumwadeepguha.com",
-      "https://makeuperfect.soumwadeepguha.com",
+      "http://localhost:3006",
+      "http://task.makememaster.in",
+      "https://task.makememaster.in",
     ],
     credentials: true,
   })

@@ -1,6 +1,6 @@
 import axios from "axios";
 axios.defaults.withCredentials = true;
-const API_URI = "http://3.109.139.206:4000";
+const API_URI = "http://localhost:4006";
 
 export const getTodos = async () => {
   try {
