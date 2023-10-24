@@ -1,6 +1,7 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable no-unused-vars */
 import { useState, useEffect, useContext } from "react";
+import OpenAI from "openai";
 import { useNavigate } from "react-router-dom";
 import Sidebar from "../components/Sidebar";
 import dashboardpic from "../images/topic.webp";
@@ -10,9 +11,17 @@ const CreateTopic = () => {
   useEffect(() => {
     document.title = "Create Topic | Perfector";
   }, []);
+
+  const openai = new OpenAI({
+    apiKey: "",
+    dangerouslyAllowBrowser: true,
+  });
+
   const [heading, setTopic] = useState("");
   const [brief, setBrief] = useState("");
+  const [isAIProvidingDesc, setIsAIProvidingDesc] = useState(false);
   const navigate = useNavigate();
+
   const submitHandler = async (e) => {
     e.preventDefault();
     const data = { heading, brief };
@@ -23,6 +32,38 @@ const CreateTopic = () => {
     } else {
       alert(response.response.data.msg);
       return;
+    }
+  };
+
+  const callOpenAI = async () => {
+    setIsAIProvidingDesc(true);
+    try {
+      const response = await openai.chat.completions.create({
+        model: "gpt-3.5-turbo",
+        messages: [
+          {
+            role: "system",
+            content:
+              "You are a helpful assistant that provides a brief description of a given topic.",
+          },
+          {
+            role: "user",
+            content: `Give 1 Line Description On This Topic: ${heading}`,
+          },
+        ],
+        temperature: 0,
+        max_tokens: 50,
+      });
+
+      if (response.choices && response.choices.length > 0) {
+        const aiDescription = response.choices[0].message.content;
+        setBrief(aiDescription); // Update the "Brief" state with the description
+      }
+    } catch (error) {
+      console.error("Error calling OpenAI:", error);
+      alert("Failed To Load", error.message);
+    } finally {
+      setIsAIProvidingDesc(false);
     }
   };
 
@@ -79,6 +120,17 @@ const CreateTopic = () => {
                     >
                       {/* {isSigningIn ? "Signing In..." : "Sign In"} */}
                       Add Topic
+                    </button>
+                    {/* Fetch API Suggestions */}
+                    <button
+                      type="submit"
+                      className="btn btn-info"
+                      onClick={callOpenAI}
+                      disabled={isAIProvidingDesc}
+                    >
+                      {isAIProvidingDesc
+                        ? "Suggesting..."
+                        : "Suggest An AI Description"}
                     </button>
                   </form>
                 </div>
