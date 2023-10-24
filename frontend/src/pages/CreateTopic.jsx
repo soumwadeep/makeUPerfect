@@ -13,7 +13,7 @@ const CreateTopic = () => {
   }, []);
 
   const openai = new OpenAI({
-    apiKey: "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",
+    apiKey: "",
     dangerouslyAllowBrowser: true,
   });
 
