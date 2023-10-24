@@ -9,7 +9,7 @@ import TopicList from "../components/TopicList";
 
 const Dashboard = () => {
   useEffect(() => {
-    document.title = "Dashboard | Perfector";
+    document.title = "Dashboard | makeUPerfect";
   }, []);
   const navigate = useNavigate();
 
@@ -23,8 +23,21 @@ const Dashboard = () => {
               <div className="middle">
                 <div className="inner">
                   <h1>Welcome To makeUPerfect&apos;s Dashboard!</h1>
-                  <h3>Start Your Journey With Us By Creating Your Desired Topics!</h3>
-                  <button className="btn btn-info btn-lg focuscolour mt-3" onClick={() => navigate("/topic/create")}>Click Here To Create A Topic Now</button>
+                  <h3>
+                    Start Your Journey With Us By Creating Your Desired Topics!
+                  </h3>
+                  <button
+                    className="btn btn-info btn-lg focuscolour mt-3"
+                    onClick={() => navigate("/topic/create")}
+                  >
+                    Click Here To Create A Topic Now
+                  </button>
+                  <button
+                    className="btn btn-info btn-lg focuscolour mt-3"
+                    onClick={() => navigate("/todo/aicreate")}
+                  >
+                    Click Here To Create A Todo Now
+                  </button>
                 </div>
               </div>
             </div>

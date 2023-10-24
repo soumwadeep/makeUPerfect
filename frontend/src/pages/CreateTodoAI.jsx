@@ -4,10 +4,11 @@ import Sidebar from "../components/Sidebar";
 import dashboardpic from "../images/todo.webp";
 import { createTodo } from "../apiCalls/todo";
 
-const CreateTodo = () => {
+const CreateTodoAI = () => {
   useEffect(() => {
     document.title = "Create Todo | makeUPerfect";
   }, []);
+  const [topic, setTopic] = useState("");
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const navigate = useNavigate();
@@ -76,6 +77,17 @@ const CreateTodo = () => {
                         onChange={(e) => setDescription(e.target.value)}
                       />
                     </div>
+                    <div className="mb-3">
+                      <label className="form-label">Topic</label>
+                      <input
+                        type="text"
+                        placeholder="Enter the topic under which you want to put this todo..."
+                        className="form-control"
+                        required
+                        value={topic}
+                        onChange={(e) => setTopic(e.target.value)}
+                      />
+                    </div>
                     <button
                       type="submit"
                       className="btn btn-success"
@@ -83,6 +95,14 @@ const CreateTodo = () => {
                     >
                       {/* {isSigningIn ? "Signing In..." : "Sign In"} */}
                       Add Todo
+                    </button>
+                    <button
+                      type="submit"
+                      className="btn btn-info"
+                      // disabled={isSigningIn}
+                    >
+                      {/* {isSigningIn ? "Signing In..." : "Sign In"} */}
+                      Suggest Topic For This
                     </button>
                   </form>
                 </div>
@@ -95,4 +115,4 @@ const CreateTodo = () => {
   );
 };
 
-export default CreateTodo;
+export default CreateTodoAI;

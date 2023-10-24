@@ -9,11 +9,11 @@ import { createTopic } from "../apiCalls/topic";
 
 const CreateTopic = () => {
   useEffect(() => {
-    document.title = "Create Topic | Perfector";
+    document.title = "Create Topic | makeUPerfect";
   }, []);
 
   const openai = new OpenAI({
-    apiKey: "",
+    apiKey: "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",
     dangerouslyAllowBrowser: true,
   });
 

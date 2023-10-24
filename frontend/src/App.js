@@ -22,6 +22,7 @@ import UpdateTodo from "./pages/UpdateTodo";
 import CreateTopic from "./pages/CreateTopic";
 import ViewTopic from "./pages/ViewTopic";
 import UpdateTopic from "./pages/UpdateTopic";
+import CreateTodoAI from "./pages/CreateTodoAI";
 
 const App = () => {
   const { user, setUser } = useContext(UserContext);
@@ -97,6 +98,16 @@ const App = () => {
             element={
               <ProtectedRoutes loggedIn={user && user._id ? true : false}>
                 <CreateTodo />
+              </ProtectedRoutes>
+            }
+          />
+          {/* Todos */}
+          <Route
+            exact
+            path="/todo/aicreate"
+            element={
+              <ProtectedRoutes loggedIn={user && user._id ? true : false}>
+                <CreateTodoAI />
               </ProtectedRoutes>
             }
           />
