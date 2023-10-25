@@ -8,6 +8,7 @@ makeUPerfect is a powerful and intuitive web application designed to help you ex
 - **Track Your Progress**: Stay motivated by tracking your progress and marking tasks as completed.
 - **User-Friendly Interface**: makeUPerfect offers a clean and intuitive interface, making it easy to navigate and manage your tasks.
 - **Powerful Technologies**: makeUPerfect is built using the MERN Stack, combining the flexibility of MongoDB, the simplicity of Express.js, the dynamic user interface of React.js, and the server-side capabilities of Node.js.
+- - **AI Suggestions**: We have added AI Suggestions for both Topic and Todo Creation Page.Our AI will help you to write an unique description of your Topic and also suggest you best topic fit for newly created Todos.
 - **Continuous Improvement**: Our team is dedicated to continuously enhancing makeUPerfect to provide an exceptional user experience and address user feedback.
 
 ## Getting Started
@@ -42,6 +43,9 @@ To get started with makeUPerfect, follow these steps:
 ## Topic Creation Page
 ![image](https://github.com/soumwadeep/makeUPerfect/assets/69720515/b672936a-ad70-404b-8792-77968093879f)
 
+## Topic Creation With AI Page
+![Screenshot 2023-10-25 at 12 48 26 PM](https://github.com/soumwadeep/makeUPerfect/assets/69720515/01d99c9e-8db7-47a0-b981-602254332f12)
+
 ## Topic Viewer Page
 ![image](https://github.com/soumwadeep/makeUPerfect/assets/69720515/eff54e1e-bf7d-4aa2-aada-7963d2ae1a11)
 
@@ -50,6 +54,9 @@ To get started with makeUPerfect, follow these steps:
 
 ## Todo Creation Page
 ![image](https://github.com/soumwadeep/makeUPerfect/assets/69720515/f6c4fc11-6313-47a2-8840-324d835b5d82)
+
+## Todo Creation With AI Page
+![Screenshot 2023-10-25 at 12 50 45 PM](https://github.com/soumwadeep/makeUPerfect/assets/69720515/0a86332c-abd6-4ae0-be23-7eb4c715d1b4)
 
 ## Todo Viewer Page
 ![image](https://github.com/soumwadeep/makeUPerfect/assets/69720515/d46c0fab-b53a-4951-a408-c50b815ad321)
