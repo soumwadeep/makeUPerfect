@@ -1,7 +1,7 @@
 import axios from "axios";
 axios.defaults.withCredentials = true;
-const API_URI = "https://makeuperfectdb.onrender.com";
-
+// const API_URI = "https://makeuperfectdb.onrender.com";
+const API_URI = "http://localhost:4006";
 export const getTodos = async () => {
   try {
     const res = await axios.get(`${API_URI}/api/todos`);
