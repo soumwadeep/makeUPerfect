@@ -15,6 +15,7 @@ app.use(
       "http://localhost:3000",
       "http://task.makememaster.in",
       "https://task.makememaster.in",
+      "https://makeuperfectmain.netlify.app/"
     ],
     credentials: true,
   })
