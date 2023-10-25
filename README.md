@@ -8,7 +8,7 @@ makeUPerfect is a powerful and intuitive web application designed to help you ex
 - **Track Your Progress**: Stay motivated by tracking your progress and marking tasks as completed.
 - **User-Friendly Interface**: makeUPerfect offers a clean and intuitive interface, making it easy to navigate and manage your tasks.
 - **Powerful Technologies**: makeUPerfect is built using the MERN Stack, combining the flexibility of MongoDB, the simplicity of Express.js, the dynamic user interface of React.js, and the server-side capabilities of Node.js.
-- - **AI Suggestions**: We have added AI Suggestions for both Topic and Todo Creation Page.Our AI will help you to write an unique description of your Topic and also suggest you best topic fit for newly created Todos.
+- **AI Suggestions**: We have added AI Suggestions for both Topic and Todo Creation Page.Our AI will help you to write an unique description of your Topic and also suggest you best topic fit for newly created Todos.
 - **Continuous Improvement**: Our team is dedicated to continuously enhancing makeUPerfect to provide an exceptional user experience and address user feedback.
 
 ## Getting Started
