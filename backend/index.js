@@ -12,7 +12,7 @@ dotenv.config();
 app.use(
   cors({
     origin: [
-      "http://localhost:3006",
+      "http://localhost:3000",
       "http://task.makememaster.in",
       "https://task.makememaster.in",
     ],

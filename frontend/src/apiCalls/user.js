@@ -1,6 +1,6 @@
 import axios from "axios";
 axios.defaults.withCredentials = true;
-const API_URI = "http://localhost:4006";
+const API_URI = "https://makeuperfectdb.onrender.com/";
 
 export const register = async (user) => {
   try {
